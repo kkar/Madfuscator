@@ -63,7 +63,7 @@ def xor(message, key):
         toret += chr(ord(c) ^ ord(k))
     return toret
 
-randomKey = ''.join(random.choice(keycharset) for x in range(2))
+randomKey = ''.join(random.choice(keycharset) for x in range(3))
 md5sum = hashlib.md5(payload).hexdigest().upper()
 encrypted = base64.encodestring(xor(payload, randomKey)).replace('\n', '')
 
